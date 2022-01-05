@@ -25,6 +25,8 @@
      document.getElementById("btn__reset").addEventListener("click", hideOverlay);
 
      const phrase = new Phrase(game.getRandomPhrase());
+     new Phrase(phrase).addPhraseToDisplay();
+     
      
     }
 
