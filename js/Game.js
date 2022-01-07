@@ -21,6 +21,7 @@
 
      this.activePhrase = this.getRandomPhrase();
      this.activePhrase.addPhraseToDisplay();
+    this.activePhrase.checkLetter();
     
      
      
