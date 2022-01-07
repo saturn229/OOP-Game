@@ -12,7 +12,7 @@
       const phraseUl = document.getElementById("phrase").firstElementChild;
       const randoPhrase = this.phrase.split("");
 
-      console.log(randoPhrase)
+      console.log(this.phrase)
       for(let i = 0; i < this.phrase.length; i++){
         const phraseli = document.createElement("li");
         if (this.phrase[i] === " "){
@@ -32,9 +32,12 @@
    /*checks to see if the letter selected by the player matches a letter in the phrase.*/
    checkLetter(){
     const keyboard = document.getElementsByClassName("key");
-    console.log(keyboard);
     for(let i = 0; i < keyboard.length; i++){
-      console.log(keyboard[i].value);
+      
+      keyboard[i].addEventListener("click", function(){
+        console.log(keyboard[i].textContent);
+        console.log(this.phrase.includes(keyboard[i].textContent));
+      });
       }
     
     
