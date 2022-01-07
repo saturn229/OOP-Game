@@ -34,7 +34,7 @@
     const keyboard = document.getElementsByClassName("key");
     console.log(keyboard);
     for(let i = 0; i < keyboard.length; i++){
-      console.log(keyboard[i]);
+      console.log(keyboard[i].value);
       }
     
     
