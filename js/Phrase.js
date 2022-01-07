@@ -9,8 +9,15 @@
    
 
    addPhraseToDisplay(){
-      let phraseUl = document.getElementsByTagName("ul");
-      console.log(this.phrase);
+      const phraseUl = document.getElementsByTagName("ul").firstElementChild;
+      const randoPhrase = this.phrase.split("");
+
+      console.log(randoPhrase)
+      for(let i = 0; i < this.phrase.length; i++){
+        const li = document.createElement("li");
+        phraseUl.appendChild(li);
+        
+      }
    }
 
    checkLetter(){
