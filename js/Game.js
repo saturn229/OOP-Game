@@ -17,15 +17,12 @@
    startGame(){
      //hides start screen overlay when start game is clicked
      let overlay = document.getElementById("overlay")
+     document.getElementById("btn__reset").addEventListener("click", () => overlay.style.display = 'none');
 
-     function hideOverlay(){
-       overlay.style.display = 'none';
-     }
-
-     document.getElementById("btn__reset").addEventListener("click", hideOverlay);
-
-     const phrase = new Phrase(game.getRandomPhrase());
-     new Phrase(phrase).addPhraseToDisplay();
+     this.activePhrase = this.getRandomPhrase();
+     this.activePhrase.addPhraseToDisplay();
+    
+     
      
      
     }
