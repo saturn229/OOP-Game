@@ -30,21 +30,21 @@
       }
    }
    /*checks to see if the letter selected by the player matches a letter in the phrase.*/
-   checkLetter(){
-    const keyboard = document.getElementsByClassName("key");
-    for(let i = 0; i < keyboard.length; i++){
-      
-      keyboard[i].addEventListener("click", function(){
-        console.log(keyboard[i].textContent);
-        console.log(this.phrase.includes(keyboard[i].textContent));
-      });
-      }
-    
+   checkLetter(letter){
+    return this.phrase.includes(letter);
     
    }
 
-   showMatchedLetter(){
-     
-   }
+   showMatchedLetter(letter){
+     const phraseDiv = document.getElementById('phrase');
+     const phraseUl = phraseDiv.firstElementChild;
+     const phraseLi = phraseUl.getElementsByTagName("li");
 
- }
+     for(let i = 0; i < phraseLi.length; i++){
+       if(phraseLi[i].textContent === letter){
+        phraseLi[i].classList.replace("hide", "show")
+       }
+     }
+   };
+
+ };
