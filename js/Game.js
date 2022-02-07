@@ -19,7 +19,7 @@
    }
    getRandomPhrase(){
      const num = Math.floor(Math.random() * this.phrases.length);
-     this.activePhrase = new Phrase(this.phrases[num]);
+     this.activePhrase = this.phrases[num];
      return this.activePhrase;
    };
 
@@ -107,7 +107,7 @@
      startButton.textContent = "Play Again";
 
      const chosenLetters = document.querySelectorAll('.chosen');
-     const wrongLetters = document.querySelectorAll('.chosen');
+     const wrongLetters = document.querySelectorAll('.wrong');
 
      
      for(let i = 0; i < chosenLetters.length; i++){
@@ -132,6 +132,8 @@
        phraseLi[i].classList.replace("show", "hide")
        
      }
+
+     this.missed = 0;
 
      
    }
