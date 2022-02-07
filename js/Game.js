@@ -2,11 +2,21 @@
  * Project 4 - OOP Game App
  * Game.js */
  class Game {
-   constructor(missed, phrases, activePhrase){
+   constructor(){
      this.missed = 0;
-     this.phrases = ["Hello there", "goodbye now", "I love cheese", "I like porcupines", "porcupines dont eat cheese"];
+     this.phrases = this.createPhrases();
      this.activePhrase = null;
    };
+
+   createPhrases(){
+     return [
+       new Phrase ("Hello there"),
+       new Phrase("goodbye now"),
+       new Phrase("I love cheese"),
+       new Phrase("I like porcupines"), 
+       new Phrase("porcupines dont eat cheese")
+     ];
+   }
    getRandomPhrase(){
      const num = Math.floor(Math.random() * this.phrases.length);
      this.activePhrase = new Phrase(this.phrases[num]);
