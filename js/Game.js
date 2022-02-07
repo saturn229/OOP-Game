@@ -72,11 +72,13 @@
       document.getElementById('game-over-message').textContent = "Game Over";
       document.getElementById('overlay').classList.add('lose');
       document.getElementById('overlay').classList.remove('start');
+      this.missed = 0;
       this.reset();
     } else {
       document.getElementById('game-over-message').textContent = "You Won";
       document.getElementById('overlay').classList.add('win');
       document.getElementById('overlay').classList.remove('start');
+      this.missed = 0;
       this.reset();
     }
    };
@@ -133,7 +135,7 @@
        
      }
 
-     this.missed = 0;
+     
 
      
    }
