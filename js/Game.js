@@ -19,8 +19,8 @@
    }
    getRandomPhrase(){
      const num = Math.floor(Math.random() * this.phrases.length);
-     this.activePhrase = this.phrases[num];
-     return this.activePhrase;
+     const randomPhrase = this.phrases[num];
+     return randomPhrase;
    };
 
 
@@ -74,7 +74,7 @@
       document.getElementById('overlay').classList.remove('start');
       this.missed = 0;
       this.reset();
-    } else {
+    } else if(gameWon){
       document.getElementById('game-over-message').textContent = "You Won";
       document.getElementById('overlay').classList.add('win');
       document.getElementById('overlay').classList.remove('start');
@@ -105,6 +105,7 @@
 
    
    reset(){
+     document.querySelector("ul").textContent = '';
      const startButton = document.getElementById('btn__reset');
      startButton.textContent = "Play Again";
 
@@ -123,7 +124,7 @@
      }
 
      const hearts = document.querySelectorAll('.tries img');
-     for(let i = 0; i < hearts.length; i++){
+     for(let i = 0; i <= hearts.length; i++){
        hearts[i].src = 'images/liveHeart.png';
      }
      const phraseDiv = document.getElementById('phrase');
@@ -136,9 +137,14 @@
      }
 
      
+        
+        
+    }
+
+     
 
      
    }
 
    
-}
+
