@@ -3,8 +3,9 @@
  * app.js */
 const game = new Game();
 
+const startGameBtn = document.querySelector("#btn__reset")
+startGameBtn.addEventListener("click",  function() {game.startGame();});
 
-game.startGame();
 
 const button = document.getElementsByClassName('key');
 
@@ -14,3 +15,4 @@ for(let i = 0; i < button.length; i++){
         game.handleInteraction(event.target);
     });
 }
+
